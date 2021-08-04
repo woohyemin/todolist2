@@ -14,7 +14,7 @@ const initialTodos = [
     {
         id: 3,
         text: 'Context 만들기',
-        done: true,
+        done: false,
     },
     {
         id: 4,
@@ -66,13 +66,25 @@ export function TodoProvider({ children }) {
 }
 
 export function useTodoState() {
-    return useContext(TodoStateContext);
+    const context = useContext(TodoStateContext);
+    if (!context) {
+        throw new Error('Cannot find TodoProvider');
+    }
+    return context;
 }
 
 export function useTodoDispatch() {
-    return useContext(TodoDispatchContext);
+    const context = useContext(TodoDispatchContext);
+    if (!context) {
+        throw new Error('Cannot find TodoProvider');
+    }
+    return context;
 }
 
 export function useTodoNextId() {
-    return useContext(TodoNextIdContext);
+    const context = useContext(TodoNextIdContext);
+    if (!context) {
+        throw new Error('Cannot find TodoProvider');
+    }
+    return context;
 }
