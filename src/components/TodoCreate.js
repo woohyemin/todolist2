@@ -83,19 +83,18 @@ function TodoCreate() {
     const onToggle = () => setOpen(!open);
     const onChange = e => setValue(e.target.value);
     const onSubmit = e => {
-        e.preventDefault();
+        e.preventDefault(); // 기본적으로 제공하는 기능을 막아줌
         dispatch({
             type: 'CREATE',
             todo: {
-                id: nextId.current,
-                text: value,
-                done: false,
+                id: nextId.current, // 현재 아이디
+                text: value, // 할 일 내용
+                done: false, // 생성된 할 일은 기본값 false
             }
-            
         });
-        setValue('');
-        setOpen(false);
-        nextId.current += 1;
+        setValue(''); // 생성 후, 인풋 내용 초기화
+        setOpen(false); // 입력 UI 닫힘
+        nextId.current += 1; //현재 아이디에 +1 해줌
     };
 
 
@@ -103,7 +102,7 @@ function TodoCreate() {
     
     return (
         <>
-            {open && (
+            {open && ( // open이 true일 경우 다음 내용 실행
                 <InsertFormPositioner>
                     <InsertForm onSubmit={onSubmit}>
                         <Input
@@ -116,7 +115,7 @@ function TodoCreate() {
                 </InsertFormPositioner>
             )}
             <CircleButton onClick={onToggle} open={open}>
-            <MdAdd />
+                <MdAdd />
             </CircleButton>
         </>
     );
