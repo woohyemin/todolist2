@@ -58,7 +58,7 @@ const TodoItemBlock = styled.div`
 `;
 
 function TodoItem({ id, done, text }) {
-    const dispatch = useTodoDispatch();
+    const dispatch = useTodoDispatch(); // useTodoDispatch 함수
     const onToggle = () =>
         dispatch({
             type: 'TOGGLE',

@@ -20,7 +20,7 @@ const TodoTemplateBlock = styled.div`
 `;
 
 function TodoTemplate({ children }) {
-    return <TodoTemplateBlock>{children}</TodoTemplateBlock>;
+    return <TodoTemplateBlock>{children}</TodoTemplateBlock>; // TodoTemplate 하위 내용(컴포넌트들)에 TodoTemplateBolck 스타일을 적용
 }
 
 export default TodoTemplate;

@@ -77,7 +77,7 @@ const Input = styled.input`
 function TodoCreate() {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState('');
-    const dispatch = useTodoDispatch();
+    const dispatch = useTodoDispatch(); // 
     const nextId = useTodoNextId();
 
     const onToggle = () => setOpen(!open);
