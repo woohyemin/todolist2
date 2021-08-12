@@ -68,7 +68,7 @@ export function TodoProvider({ children }) {
 export function useTodoState() {
     const context = useContext(TodoStateContext);
     if (!context) {
-        throw new Error('Cannot find TodoProvider');
+        throw new Error('Cannot find TodoProvider'); // context가 없을 경우 에러 처리
     }
     return context;
 }
@@ -76,7 +76,7 @@ export function useTodoState() {
 export function useTodoDispatch() {
     const context = useContext(TodoDispatchContext);
     if (!context) {
-        throw new Error('Cannot find TodoProvider');
+        throw new Error('Cannot find TodoProvider'); // context가 없을 경우 에러 처리
     }
     return context;
 }
@@ -84,7 +84,7 @@ export function useTodoDispatch() {
 export function useTodoNextId() {
     const context = useContext(TodoNextIdContext);
     if (!context) {
-        throw new Error('Cannot find TodoProvider');
+        throw new Error('Cannot find TodoProvider'); // context가 없을 경우 에러 처리
     }
     return context;
 }
