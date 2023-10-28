@@ -20,6 +20,11 @@ const initialTodos = [ // 할 일 초기 세팅
         id: 4,
         text: '기능 구현하기',
         done: false,
+    },
+    {
+        id: 5,
+        text: '테스트하기',
+        done: false,
     }
 ];
 
