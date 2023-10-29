@@ -44,7 +44,6 @@ function todoReducer(state, action) {
             ); // todo.id가 action.id와 같을 경우 기존 todo(할 일)에 done을 반대로 바꿔주고, 같지 않으면 기존 todo(할 일) 그대로 리턴
         case 'REMOVE': // 삭제
             return state.filter(todo => todo.id !== action.id); // action.id가 아닌 (= 삭제되지 않은) todo(할 일만) 리턴
-
         default:
             throw new Error(`Unhandled action type: ${action.type}`);
     }
